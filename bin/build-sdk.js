@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+console.log("Starting")
 var __importDefault =
   (this && this.__importDefault) ||
   function(mod) {
@@ -11,7 +12,9 @@ const path = require('path')
 const dotenv_1 = __importDefault(require('dotenv'))
 
 // Load environment variables from .env file
+console.log("Loading config")
 dotenv_1.default.config()
+console.log("Done loading config")
 
 function execCmd(cmd) {
   console.log('Running ==> ' + chalk.bold.cyan(cmd))
