@@ -122,7 +122,6 @@ function buildSdk() {
     let network
     if (argv._.length === 0) {
       network = process.env.ENVIRONMENT
-      console.log('NETWORKKKKKK', process.env.ENVIRONMENT)
       if (!network) {
         console.error('First argument should be the environment name')
         process.exit(1)
@@ -132,6 +131,12 @@ function buildSdk() {
     }
     const artifactsPath = path.join(modulePath, '.artifacts')
     const contractsPath = path.join(modulePath, './contracts')
+
+    console.log("Network", network)
+    console.log("Module path", modulePath)
+    console.log("Artifacts path", artifactsPath)
+    console.log("Contracts Path", contractsPath)
+    
     execCmd(`rm -rf ${path.join(artifactsPath, network)} ${path.join(contractsPath)}`)
     writeProxiedContractGetters(artifactsPath, contractsPath, network)
     const contractArtifactsPattern = path.join(
