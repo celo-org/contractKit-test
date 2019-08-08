@@ -125,6 +125,7 @@ function buildSdk() {
     console.log("Determining network")
     console.log("Argv:", argv._)
     if (argv._.length === 0) {
+      console.log("Process env", process.env)
       network = process.env.ENVIRONMENT
       if (!network) {
         console.error('First argument should be the environment name')
