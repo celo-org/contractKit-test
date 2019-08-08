@@ -122,6 +122,8 @@ function buildSdk() {
   try {
     const modulePath = path.dirname(__dirname)
     let network
+    console.log("Determining network")
+    console.log("Argv:", argv._)
     if (argv._.length === 0) {
       network = process.env.ENVIRONMENT
       if (!network) {
@@ -131,10 +133,10 @@ function buildSdk() {
     } else {
       network = argv._[0]
     }
+    console.log("Network ", network)
     const artifactsPath = path.join(modulePath, '.artifacts')
     const contractsPath = path.join(modulePath, './contracts')
 
-    console.log("Network ", network)
     console.log("Module path ", modulePath)
     console.log("Artifacts path ", artifactsPath)
     console.log("Contracts Path ", contractsPath)
