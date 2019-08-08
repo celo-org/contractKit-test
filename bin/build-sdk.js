@@ -1,20 +1,9 @@
 #!/usr/bin/env node
 console.log("Starting")
-var __importDefault =
-  (this && this.__importDefault) ||
-  function(mod) {
-    return mod && mod.__esModule ? mod : { default: mod }
-  }
 const execSync = require('child_process').execSync
 const fs = require('fs')
 const chalk = require('chalk')
 const path = require('path')
-const dotenv_1 = __importDefault(require('dotenv'))
-
-// Load environment variables from .env file
-console.log("Loading config")
-dotenv_1.default.config()
-console.log("Done loading config")
 
 function execCmd(cmd) {
   console.log('Running ==> ' + chalk.bold.cyan(cmd))
@@ -126,11 +115,8 @@ function buildSdk() {
     console.log("Argv:", argv._)
     if (argv._.length === 0) {
       console.log("Process env", process.env)
-      network = process.env.ENVIRONMENT
-      if (!network) {
-        console.error('First argument should be the environment name')
-        process.exit(1)
-      }
+      console.error('First argument should be the environment name')
+      process.exit(1)
     } else {
       network = argv._[0]
     }
