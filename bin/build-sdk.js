@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// tslint:disable:no-console
+
 var __importDefault =
   (this && this.__importDefault) ||
   function(mod) {
