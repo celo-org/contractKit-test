@@ -9,7 +9,7 @@
   "scripts": {
     "build": "yarn run clean && bin/build-sdk.js",
     "compile-typescript": "tsc",
-    "clean": "rm -rf lib .artifacts contracts types lib",
+    "clean": "rm -rf lib .artifacts contracts types",
     "lint": "tslint -c tslint.json --project tsconfig.json",
     "lint-checks": "yarn run lint && yarn run build alfajores",
     "postinstall": "yarn run build",
